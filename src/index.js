@@ -76,8 +76,8 @@ document.addEventListener('DOMContentLoaded', () => {
       // this is where u should have that third dataStore...
       // filter for only good dogs
       let goodDogs = dataStore.filter((dog) => {return dog.isGoodDog === true })
-      console.log("filtered", goodDogs);
-      console.log("ALL DOGS",dataStore);
+      // console.log("filtered", goodDogs);
+      // console.log("ALL DOGS",dataStore);
       // RENDER goodDogs
       let filteredDomHtml = goodDogs.map((dog) => {
         return `<span class="dog-span" id="${dog.id}">${dog.name}</span>`
