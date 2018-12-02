@@ -27,13 +27,22 @@ Familiarize yourself with the attributes for each pup. Try going to `/pups/:id` 
 On the page, there is a `div` with the id of `"dog-bar"`. On page load, make a fetch
 to get all of the pup objects. When you have this information, you'll need to add
 a `span` with the pup's name to the dog bar (ex: `<span>Mr. Bonkers</span>`).
+1. going to need domcontent loaded event listener
+2. make a fetch to GET the data
+3. render that data on to the page specifically onto the dog bar
 
 ### STEP 3: SHOW MORE INFO ABOUT EACH PUP
 When a user clicks on a pup's `span` in the dog bar, that pup's info (`image`, `name`, and `isGoodDog` status) should show up in the `div` with the id of `"dog-info"`.
+- click event on the dog-bar div and listen for click on specific span
+- find specific span via the id of the target
+- each span must hold the dog's id to identify it
+
 When you have the pup's information, the dog info `div` should have the following children:
  - an `img` tag with the pup's image url
  - an `h2` with the pup's name
  - a `button` that says `"Good Dog!"` or `"Bad Dog!"` based on whether `isGoodDog` is true or false.
+  - going to change innerText based on whether isGoodDog is true or false
+  - have to worry about this in the click event on the dog bar bc then the div shows w the dog info
  Ex:
  ```
   <img src=dog_image_url>
@@ -46,8 +55,9 @@ When you have the pup's information, the dog info `div` should have the followin
   - The button's text should change from Good to Bad or Bad to Good
   - The corresponding pup object in the database should be updated to reflect the new isGoodDog value
     - Please note, you can update a dog by making a PATCH request to `/pups/:id`
+1. click event on the button, but should put it on the dog info div and find the button
 
-### BONUS! STEP 5: FILTER GOOD DOGS 
+### BONUS! STEP 5: FILTER GOOD DOGS
 When a user clicks on the Filter Good Dogs button, two things should happen:
  - The button's text should change from "Filter good dogs: OFF" to "Filter good dogs: ON", or vice versa.
  - If the button now says "ON" (meaning the filter is on), then the Dog Bar should only show pups whose isGoodDog attribute is true. If the filter is off, the Dog Bar should show all pups (like normal).
